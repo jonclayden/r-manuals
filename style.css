@@ -1,0 +1,126 @@
+body {
+  font-family: helvetica, arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.3;
+  width: 600px;
+  text-align: justify;
+  margin-left: 280px;
+  padding-left: 20px;
+}
+
+h1 {
+  font-size: 18pt;
+  font-weight: bold;
+  margin-top: 30px;
+  border-bottom: 2px #bbb solid;
+}
+
+h2 {
+  font-size: 14pt;
+  font-weight: bold;
+  border-bottom: 1px #bbb solid;
+}
+
+h3 {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+hr {
+  display: none;
+}
+
+a {
+  color: #d44;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h2:first-of-type {
+  display: none;
+}
+
+div.node {
+  font-size: 9pt;
+  color: #aaa;
+}
+
+div.node a {
+  color: #d88;
+}
+
+div.contents {
+  font-size: 10pt;
+  margin: 0px;
+	padding: 20px;
+	position: fixed;
+	left: 30px;
+  top: 40px;
+  width: 200px;
+}
+
+div.contents h2 {
+  display: block;
+  font-size: 12pt;
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+div.contents ul {
+  margin: 18px;
+  padding: 0px;
+  text-align: left;
+}
+
+div.contents ul ul {
+  display:none;
+}
+
+code, samp, kbd, var, span.file, span.samp, span.command {
+  font-family: inconsolata, courier, monospace;
+  font-size: 10pt;
+  font-style: normal;
+  background-color: #ddd;
+}
+
+pre {
+  font-family: inconsolata, courier, monospace;
+  font-size: 10pt;
+  background-color: #ddd;
+  border: 1px #bbb solid;
+  overflow-x: scroll;
+}
+
+table {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding-left: 10px;
+  margin: 0px;
+  margin-left: 20px;
+}
+
+th {
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+td {
+  padding-right: 10px;
+}
+
+blockquote {
+  margin: 10px 20px;
+  padding: 10px;
+  background-color: #dbb;
+  border: 2px #d88 solid;
+}
