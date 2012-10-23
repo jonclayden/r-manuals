@@ -6,6 +6,6 @@ to fetch the original manuals (which will have a `.html.in` extension), followed
 
     make
 
-to create the new versions (with a `.html` extension).
+to create the new versions (with a `.html` extension). The latter step requires [Ruby](http://www.ruby-lang.org/) and the [Hpricot](http://hpricot.com) Ruby gem.
 
-The changes made to the originals are very minimal: existing style tags are stripped out, a new link to the stylesheet provided is inserted, and JavaScript code is injected to support automatic hyphenation. The intention is to make the manuals easier to read and navigate.
+The changes made to the originals are very minimal: existing style tags are stripped out, a new link to the stylesheet provided is inserted, and JavaScript code is injected to support automatic hyphenation. The intention is to make the manuals easier to read and to navigate.
