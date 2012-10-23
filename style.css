@@ -60,9 +60,9 @@ div.node a {
 div.contents {
   font-size: 10pt;
   margin: 0px;
-	padding: 20px;
-	position: fixed;
-	left: 30px;
+  padding: 20px;
+  position: fixed;
+  left: 30px;
   top: 40px;
   width: 200px;
 }
@@ -98,7 +98,7 @@ pre {
   font-size: 10pt;
   background-color: #ddd;
   border: 1px #bbb solid;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 table {
