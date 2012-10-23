@@ -1,24 +1,24 @@
 #!/usr/bin/env ruby
 
 require "rubygems"
-require "hpricot"
+require "nokogiri"
 
 if ARGV.length < 1
     abort("Usage: ./build.rb <HTML input file>")
 end
 
-doc = File.open(ARGV[0]) { |file| Hpricot(file) }
+doc = File.open(ARGV[0]) { |file| Nokogiri::HTML(file) }
 
 # Remove existing style tags
-doc.search("style").remove
+doc.css("style").remove
 
 # Insert new stylesheet and JavaScript links
-head = doc.search("head")
-head.append "<link rel=\"stylesheet\" href=\"style.css\" />\n"
-head.append "<script type=\"text/javascript\" src=\"hyphenator.js\"></script>\n"
+head = doc.css("head").first
+head.add_child "<link rel=\"stylesheet\" href=\"style.css\" />\n"
+head.add_child "<script type=\"text/javascript\" src=\"hyphenator.js\"></script>\n"
 
 # Insert Google Analytics code
-head.append <<EOS
+head.add_child <<EOS
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-563735-8']);
@@ -33,18 +33,18 @@ head.append <<EOS
 EOS
 
 # Set body class to ensure everything is hyphenated
-doc.at("body").attributes["class"] = "hyphenate"
+doc.css("body").first["class"] = "hyphenate"
 
 # But don't hyphenate the table of contents, if it exists
-contents = doc.at("div.contents")
-contents.attributes["class"] = "contents donthyphenate" unless contents.nil?
+contents = doc.css("div.contents")
+contents.first["class"] = "contents donthyphenate" unless contents.empty?
 
 # Extract <pre> blocks and tables which are buried inside a <blockquote>
-doc.search("blockquote").each do |bq|
-  inner = bq.at("pre")
-  inner = bq.at("table") if inner.nil?
+doc.css("blockquote").each do |bq|
+  inner = bq.css("pre")
+  inner = bq.css("table") if inner.empty?
   
-  bq.swap(inner.to_html) unless inner.nil?
+  bq.swap(inner.first) unless inner.empty?
 end
 
-$stdout.write(doc.to_html)
+$stdout.write(doc.to_xhtml)
