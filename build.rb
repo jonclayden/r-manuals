@@ -37,7 +37,10 @@ doc.css("body").first["class"] = "hyphenate"
 
 # But don't hyphenate the table of contents, if it exists
 contents = doc.css("div.contents")
-contents.first["class"] = "contents donthyphenate" unless contents.empty?
+unless contents.empty?
+  contents.first["class"] = "contents donthyphenate"
+  contents.first.first_element_child.before "<a href=\"index.html\"><img class=\"home-button\" src=\"home.png\" alt=\"Home\" /></a>"
+end
 
 # Extract <pre> blocks and tables which are buried inside a <blockquote>
 doc.css("blockquote").each do |bq|

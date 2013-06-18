@@ -21,5 +21,5 @@ build:
 	@./build.rb $< >$@ || ( rm -f $@; exit 1 )
 	@$(ECHO) "done"
 
-upload_timestamp: *.html *.css *.js
+upload_timestamp: *.html *.css *.js *.png
 	@scp $? `cat upload_target` && touch upload_timestamp
