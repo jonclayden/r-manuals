@@ -8,7 +8,7 @@ body {
   padding-left: 20px;
 }
 
-body * {
+body>* {
   background-color: white;
 }
 
