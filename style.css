@@ -61,6 +61,19 @@ div.node a {
   color: #d88;
 }
 
+div.header {
+  font-size: 9pt;
+  color: #aaa;
+}
+
+div.header a {
+  color: #d88;
+}
+
+div:first-of-type.header {
+  display: none;
+}
+
 div.contents {
   font-size: 10pt;
   margin: 0px;
@@ -133,4 +146,12 @@ blockquote {
   padding: 10px;
   background-color: #dbb;
   border: 2px #d88 solid;
+}
+
+h1.settitle {
+  display: none;
+}
+
+table.menu {
+  display: none;
 }
