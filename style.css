@@ -109,6 +109,10 @@ div.contents ul ul {
   margin-bottom: 30px;
 }
 
+code {
+  padding: 0 0.2em;
+}
+
 code, samp, kbd, var, span.file, span.samp, span.command {
   font-family: inconsolata, courier, monospace;
   font-size: 10pt;
@@ -122,6 +126,11 @@ pre {
   background-color: #ddd;
   border: 1px #bbb solid;
   overflow-x: auto;
+  padding: 0.5em;
+}
+
+pre code {
+  padding: 0px;
 }
 
 table {
